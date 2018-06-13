@@ -1,0 +1,68 @@
+BitTorrent Tracker
+-----
+	
+	Es un tipo de servidor que asiste la comunicacion entre pares usando el protocolo BitTorrent
+
+	En P2p file sharing:
+
+	 	- Cliente de Software 
+	 	- End User PC
+				
+				= Peer machines
+
+		**** Request de un archivo ****
+
+	 	Porciones de un archivo (request) residen en otras maquinas
+	 	y estas son enviadas al cliente para luego se ensambladas en una copia completa de archivo solicitado
+
+	Tracker Server -> mantiene un registro de las copias de los archivos residen en las peer machines
+
+			- Lista los peer machines disponibles al momento 
+			  de request
+
+			- Ayuda a coordinar transisiones de archivos y ensamblar
+			  la copia del archivo
+
+	---------
+	
+	Bit torrent tracker 
+	----
+
+		Creamos el archivo del Tracker y con el flag --tracker
+		--tracker http://localhost:8000/announce
+
+		/announce -> es la direccion donde asignamos al bittrorent-tracker  para que dirija la actividad (announcements) por la URL
+
+
+	-------------
+
+	Iniciar BitTorrent (poner a disposicion un archivo)
+	-----
+
+		bittorrent-tracker
+
+		- http server -> listening on port 8000
+		- udp server -> listening on port 8000
+
+
+		**** Resultado ****
+
+		HTTP tracker: http://localhost:8000/announce
+		UDP tracker: udp://0.0.0.0:8000
+		UDP6 tracker: udp://localhost:8000
+		WebSocket tracker: ws://localhost:8000
+		Tracker stats: http://localhost:8000/stats
+
+	Seeding y Descarga del Torrent
+	--------	
+
+		comenzar a SeeDear
+		 	 
+		 	- torrent seed FILE
+
+		  		Esto le dice al tracker que los archivos estan disponibles para ser compartidos
+
+		  	- torrent FILE (luego de seedeado)
+
+		  		para comenzar a hacer seedear los archivos y transferir
+
