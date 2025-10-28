@@ -13,8 +13,8 @@ Peer machines -> portions of files -> new copy as a result of the collaboration 
 	npm install torrent
 	npm install bittorrent-tracker (Servidor)
 
-		- Seeding: torrent seed <FILE>
-		- Running process: torrent <FILE>
+	Seeding: torrent seed <FILE>
+	Running process: torrent <FILE>
 
 ## Credits
 [David Lares S](https://davidlares.com)
